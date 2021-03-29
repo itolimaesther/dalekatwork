@@ -116,17 +116,21 @@ body {
   color: #000;
 }
 
-.appnav__list-item:hover,
-.adminnav__list-item:hover {
+.appnav__list-item a,
+.adminnav__list-item a{
+  text-decoration: none;
+  padding: 20px 94px 20px 37px;
+}
+
+.appnav__list-item a:hover,
+.adminnav__list-item a:hover {
   background-color: rgba(63, 63, 63, 0.144);
   cursor: pointer;
 }
 
-.appnav__list-item:active,
-.adminnav__list-item:active,
-.appnav__list-item:focus:active,
-.adminnav__list-item:focus:active {
-  background-color: rgba(63, 63, 63, 0.363) !important;
+.appnav__list-item a:focus,
+.adminnav__list-item a:focus{
+  background-color: rgba(63, 63, 63, 0.363) !important ;
 }
 
 .main {
