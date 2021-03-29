@@ -45,6 +45,16 @@ function App() {
           </label>
         </div>
       </header>
+
+      {/* Sidebar */}
+      <Sidebar mode={mode} />
+
+      {/* main */}
+      <main className={`main  ${mode === 'app' ? "main":"main__bg"}`}>
+        <div className="overview">
+          <h1> Welcome to Dillali</h1>
+        </div>
+      </main>
     </div>
   );
 }

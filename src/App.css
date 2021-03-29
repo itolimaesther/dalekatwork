@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   color: #fff;
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   box-sizing: border-box;
 }
 
@@ -11,8 +11,8 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 80px 1fr;
   grid-template-areas:
-    'header'
-    'main';
+    "header"
+    "main";
   height: 100vh;
 }
 
@@ -23,20 +23,20 @@ body {
   left: 10px;
   align-items: center;
   justify-content: center;
-  background-color: #DADAE3;
+  background-color: #dadae3;
   border-radius: 50%;
   z-index: 1;
   cursor: pointer;
   padding: 12px;
 }
 
-.logo{
+.logo {
   display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-margin: 20px;
-color: #000;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  color: #000;
 }
 
 /* Give every child element its grid name */
@@ -49,13 +49,124 @@ color: #000;
   background-color: #d2d2d2;
 }
 
-.toggle__menu{
+.toggle__menu {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   align-self: center;
 }
 
-.toggle__menu label{
+.toggle__menu label {
   color: #000;
+}
+
+.sidenav {
+  grid-area: sidenav;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  overflow-y: auto;
+  transform: translateX(-245px);
+  transition: all 0.6s ease-in-out;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  z-index: 2; /* Needs to sit above the hamburger menu icon */
+  background-color: #fff;
+}
+
+.sidenav.active {
+  transform: translateX(0);
+}
+
+.sidenav__close-icon {
+  position: absolute;
+  visibility: visible;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ddd;
+}
+
+.list__wrap {
+  margin-top: 60px;
+}
+
+.appnav__list-show,
+.adminnav__list-show,
+.adminnav__list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.appnav__list-show,
+.adminnav__list-show {
+  display: grid;
+}
+
+.appnav__list-hide,
+.adminnav__list-hide {
+  display: none;
+}
+
+.appnav__list-item,
+.adminnav__list-item {
+  padding: 20px 20px 20px 40px;
+  color: #000;
+}
+
+.appnav__list-item:hover,
+.adminnav__list-item:hover {
+  background-color: rgba(63, 63, 63, 0.144);
+  cursor: pointer;
+}
+
+.appnav__list-item:active,
+.adminnav__list-item:active,
+.appnav__list-item:focus:active,
+.adminnav__list-item:focus:active {
+  background-color: rgba(63, 63, 63, 0.363) !important;
+}
+
+.main {
+  grid-area: main;
+  background-color: #4a4a4a;
+}
+
+.overview {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+}
+
+.overview h1 {
+  font-size: 40px;
+}
+
+.main__bg {
+  background-color: gray;
+}
+
+/* Non-mobile styles, 750px breakpoint */
+@media only screen and (min-width: 46.875em) {
+  /* Show the sidenav */
+  .grid-container {
+    grid-template-columns: 240px 1fr;
+    grid-template-areas:
+      "sidenav header"
+      "sidenav main"
+      "sidenav footer";
+  }
+
+  .sidenav {
+    transform: translateX(0);
+  }
+
+  .sidenav__close-icon {
+    visibility: hidden;
+  }
 }
