@@ -1,6 +1,20 @@
+This tasks is to create a wireframe of a ui components fulfilling all users stories below 
+
+* user can switch mode between the main and admin. 
+* user can change the background when mode is toggle 
+* menu changes base on the mode.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+```sh
+npm install -g create-react-project
+create-react-project the-best-app-ever
+cd the-best-app-ever
+npm install
+npm start
+```
 
 ## Available Scripts
 
